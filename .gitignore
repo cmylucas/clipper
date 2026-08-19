@@ -1,37 +1,44 @@
-# Ignore YOLO models and weights
+# Secrets
+.env
+.env.*
+!.env.example
+apis.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+.env/
+env/
+
+# YOLO weights and training artifacts
 *.pt
 *.pth
 models/
-
-# Ignore YOLO logs and results
 runs/
 logs/
 results/
 
-# Ignore cache and temporary files
-__pycache__/
-*.pyc
-*.pyo
+# Media and local data dumps
+*.mp4
+*.mov
+*.mp3
+data/clips/
+data/audio/
+outputs/
 
-# Ignore Python virtual environments
-venv/
-.env/
-.venv/
-env/
+# Node (voiceover_app)
+node_modules/
 
-# Ignore system and editor files
+# System and editor
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
 
-# Ignore PyInstaller build artifacts
+# PyInstaller
 dist/
 build/
 *.spec
-
-# Ignore Video files
-
-.mp4
-.mp3
-.txt

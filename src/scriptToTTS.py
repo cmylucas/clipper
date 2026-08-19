@@ -1,8 +1,10 @@
+import os
 import requests
+from dotenv import load_dotenv
 from elevenlabs import ElevenLabs, Voice, VoiceSettings
 
-# Initialize the Eleven Labs client
-client = ElevenLabs(api_key='sk_cd2597b201a73ae2b8e5651aa9dd7a66ca3fc8938ced6458')
+load_dotenv()
+client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY"))
 
 def generate_ai_voice(script_path, output_audio_path, voice_id="N2lVS1w4EtoT3dr4eOWO"):
     try:

@@ -6,6 +6,9 @@ import time
 from openai import OpenAI
 import os
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def reader(file_path):
     with open(file_path, "r", encoding="utf-8") as file:
@@ -18,7 +21,7 @@ result = reader(script)
 response = requests.post(
     "https://api.openai.com/v1/audio/speech",
     headers={
-        "Authorization": "Bearer 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",
+        "Authorization": f"Bearer {os.getenv('OPENAI_API_KEY')}",
     },
     json={
         "model": "tts-1-1106",

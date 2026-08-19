@@ -7,8 +7,10 @@ from openai import OpenAI
 import os
 import requests
 import json
+from dotenv import load_dotenv
 
-client = OpenAI(api_key="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")
+load_dotenv()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 video = cv2.VideoCapture("data/bison.mp4")
 
 base64Frames = []
